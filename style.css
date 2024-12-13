@@ -1,121 +1,272 @@
 /* Общие стили */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif; /* Устанавливает шрифт для всего документа */
+    margin: 0; /* Убирает внешние отступы у body */
+    padding: 0; /* Убирает внутренние отступы у body */
+    background-color: #e0e0e0; /* Устанавливает немного более темный серый фон для всего документа */
+    color: #000; /* Устанавливает черный цвет текста для всего документа */
+}
+
+header {
+    background-color: #e0e0e0; /* Устанавливает немного более темный серый фон для шапки */
+    color: #000; /* Устанавливает черный цвет текста в шапке */
+    padding: 2px; /* Устанавливает внутренние отступы для шапки */
+    text-align: center; /* Центрирует текст в шапке */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Делает секции выпуклыми */
+}
+
+header nav ul {
+    list-style: none; /* Убирает маркеры списка */
+    padding: 0; /* Убирает внутренние отступы у списка */
+}
+
+header nav ul li {
+    display: inline; /* Отображает элементы списка в одну строку */
+    margin: 0 10px; /* Устанавливает внешние отступы для элементов списка */
+}
+
+header nav ul li a {
+    color: #000; /* Устанавливает черный цвет ссылок в шапке */
+    text-decoration: none; /* Убирает подчеркивание у ссылок */
+    font-size: 15px; /* Уменьшает размер текста для ссылок в навигаторе */
 }
 
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    padding: 3px; /* Устанавливает внутренние отступы для основного контента */
 }
 
 .sections-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    display: grid; /* Использует сеточную верстку */
+    grid-template-columns: 1fr 1fr; /* Устанавливает две колонки для сетки */
+    gap: 1px; /* Уменьшает отступы между секциями до 1px */
 }
 
-.top-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.profile-section, .text-section {
+    grid-column: span 1; /* Занимает одну колонку для каждой секции */
+    display: flex; /* Использует Flexbox для выравнивания элементов */
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
 }
 
-.section-item {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.profile-container {
+    display: flex; /* Использует Flexbox для выравнивания элементов */
+    align-items: center; /* Центрирует элементы по вертикали */
+    width: 100%; /* Занимает всю ширину контейнера */
+    flex-direction: row; /* Меняет направление flex-контейнера на горизонтальное */
 }
 
-.thumbnail {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
+.profile-image {
+    margin-right: 5px; /* Устанавливает правый внешний отступ для изображения профиля */
+    max-width: 300px; /* Ограничивает максимальную ширину изображения */
+    height: auto; /* Сохраняет пропорции изображения */
+    cursor: pointer; /* Устанавливает курсор при наведении на изображение */
 }
 
 .text-content {
-    margin-top: 15px;
+    text-align: left; /* Выравнивает текст по левому краю */
+    flex-grow: 1; /* Разрешает элементу расти и занимать доступное пространство */
 }
 
-.bold {
-    font-weight: bold;
+section {
+    background-color: #f8f8f8; /* Устанавливает более светлый серый фон для секций */
+    padding: 10px; /* Устанавливает внутренние отступы для секций */
+    border: 2px solid #ddd; /* Устанавливает границу для секций */
+    border-radius: 5px; /* Устанавливает скругление углов для секций */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Делает секции выпуклыми */
 }
 
-.contact-info {
-    margin: 10px 0;
+/* Стили и размер для изображений */
+.thumbnail {
+    max-width: 100%; /* Ограничивает максимальную ширину изображений */
+    height: auto; /* Сохраняет пропорции изображений */
+    cursor: pointer; /* Устанавливает курсор при наведении на изображение */
 }
 
-.contact-link {
-    color: #007BFF;
-    text-decoration: none;
+/* Стили для абзацев */
+p {
+    line-height: 1; /* Увеличивает межстрочный интервал для всех абзацев */
 }
 
-.contact-link:hover {
-    text-decoration: underline;
+/* Стиль для жирного шрифта */
+.bold-text {
+    font-weight: bold; /* Устанавливает жирный шрифт */
 }
 
-.scroll-to-top, .scroll-to-bottom {
-    display: block;
-    position: fixed;
-    right: 20px;
-    padding: 10px;
-    background-color: #007BFF;
-    color: #fff;
-    text-align: center;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 20px;
-    line-height: 1;
+/* Стили для кнопок "Вернуться наверх" и "Перейти вниз" */
+.scroll-to-top,
+.scroll-to-bottom {
+    position: fixed; /* Фиксирует кнопки на экране */
+    background-color: #000; /* Устанавливает черный фон для кнопок */
+    color: #fff; /* Устанавливает белый цвет текста для кнопок */
+    border: none; /* Убирает границу у кнопок */
+    border-radius: 50%; /* Делает кнопки круглыми */
+    width: 40px; /* Устанавливает ширину кнопок */
+    height: 40px; /* Устанавливает высоту кнопок */
+    display: flex; /* Использует Flexbox для центрирования содержимого */
+    align-items: center; /* Центрирует содержимое по вертикали */
+    justify-content: center; /* Центрирует содержимое по горизонтали */
+    text-decoration: none; /* Убирает подчеркивание у ссылок */
+    font-size: 20px; /* Устанавливает размер текста для кнопок */
+    opacity: 0; /* Устанавливает начальную прозрачность для кнопок */
+    transition: opacity 0.3s; /* Плавный переход прозрачности */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Делает секции выпуклыми */
+}
+
+.scroll-to-top:hover,
+.scroll-to-bottom:hover {
+    opacity: 1; /* Увеличивает прозрачность при наведении */
 }
 
 .scroll-to-top {
-    bottom: 80px;
+    bottom: 20px; /* Устанавливает отступ снизу для кнопки "Вернуться наверх" */
+    right: 20px; /* Устанавливает отступ справа для кнопки "Вернуться наверх" */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Делает секции выпуклыми */
 }
 
 .scroll-to-bottom {
-    bottom: 20px;
+    top: 20px; /* Устанавливает отступ сверху для кнопки "Перейти вниз" */
+    right: 20px; /* Устанавливает отступ справа для кнопки "Перейти вниз" */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Делает секции выпуклыми */
+}
+
+/* Адаптивные стили */
+@media (max-width: 1200px) {
+    .sections-grid {
+        grid-template-columns: 1fr; /* Устанавливает одну колонку для сетки на экранах шириной до 1200px */
+    }
+}
+
+@media (max-width: 992px) {
+    .sections-grid {
+        grid-template-columns: 1fr; /* Устанавливает одну колонку для сетки на экранах шириной до 992px */
+    }
+}
+
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block; /* Отображает элементы списка в столбец на экранах шириной до 768px */
+        margin: 10px 0; /* Устанавливает внешние отступы для элементов списка */
+    }
+
+    .sections-grid {
+        grid-template-columns: 1fr; /* Устанавливает одну колонку для сетки на экранах шириной до 768px */
+    }
+
+    .profile-container {
+        flex-direction: column; /* Меняет направление flex-контейнера на вертикальное */
+        align-items: center; /* Центрирует элементы по горизонтали */
+    }
+
+    .profile-image {
+        margin-bottom: 5px; /* Устанавливает нижний внешний отступ для изображения профиля */
+    }
+}
+
+@media (max-width: 576px) {
+    .sections-grid {
+        grid-template-columns: 1fr; /* Устанавливает одну колонку для сетки на экранах шириной до 576px */
+    }
+
+    header {
+        padding: 10px; /* Уменьшает внутренние отступы для шапки на маленьких экранах */
+    }
+
+    main {
+        padding: 10px; /* Уменьшает внутренние отступы для основного контента на маленьких экранах */
+    }
+
+    header nav ul li a {
+        font-size: 15px; /* Уменьшает размер текста для ссылок в навигаторе на маленьких экранах */
+    }
+
+    section {
+        padding: 5px; /* Уменьшает внутренние отступы для секций на маленьких экранах */
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        margin: 5px 0; /* Уменьшает внешние отступы для элементов списка на очень маленьких экранах */
+    }
+
+    .sections-grid {
+        grid-template-columns: 1fr; /* Устанавливает одну колонку для сетки на очень маленьких экранах */
+    }
+
+    header {
+        padding: 5px; /* Уменьшает внутренние отступы для шапки на очень маленьких экранах */
+    }
+
+    main {
+        padding: 5px; /* Уменьшает внутренние отступы для основного контента на очень маленьких экранах */
+    }
+
+    header nav ul li a {
+        font-size: 10px; /* Уменьшает размер текста для ссылок в навигаторе на очень маленьких экранах */
+    }
+
+    section {
+        padding: 5px; /* Уменьшает внутренние отступы для секций на очень маленьких экранах */
+    }
+
+    .thumbnail {
+        max-width: 100%; /* Уменьшает максимальную ширину изображений на очень маленьких экранах */
+    }
+
+    .thumbnail-container {
+        gap: 5px; /* Уменьшает отступы между изображениями на очень маленьких экранах */
+    }
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    margin-top: 20px;
+    text-align: center; /* Центрирует текст в подвале */
+    padding: 10px; /* Увеличиваем внутренние отступы для подвала */
+    background-color: #e0e0e0; /* Устанавливает немного более темный серый фон для подвала */
+    color: #000; /* Устанавливает черный цвет текста в подвале */
+    margin-top: 10px; /* Увеличиваем верхний внешний отступ для подвала */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Делает секции выпуклыми */
+    border-radius: 8px; /* Добавляем скругление углов */
 }
 
-/* Адаптивность */
+/* Стили для центрирования изображений в секциях */
+.thumbnail-container {
+    display: flex;
+    flex-wrap: wrap; /* Переносит изображения на новую строку при нехватке места */
+    justify-content: center;
+    gap: 5px; /* Отступы между изображениями */
+    margin-bottom: 5px; /* Отступ снизу для каждого контейнера с изображением */
+}
+
+.thumbnail-container a {
+    flex: 1 1 45%; /* Разрешает изображениям занимать до 45% ширины контейнера */
+    max-width: 45%; /* Ограничивает максимальную ширину изображений */
+    box-sizing: border-box; /* Включает padding и border в ширину элемента */
+}
+
+/* Стили для центрирования текста в указанных секциях */
+.centered-section {
+    text-align: center; /* Центрирует текст в секциях */
+}
+
+/* Стили для расположения секций в ряд */
+.sections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Устанавливает две колонки для сетки */
+    gap: 2px; /* Уменьшает отступы между секциями до 1px */
+}
+
+.profile-section, .text-section {
+    grid-column: span 1; /* Занимает одну колонку для каждой секции */
+}
+
 @media (max-width: 768px) {
     .sections-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Устанавливает одну колонку для сетки на экранах шириной до 768px */
     }
+}
 
-    .top-section, .section-item {
-        padding: 15px;
-    }
-
-    .scroll-to-top, .scroll-to-bottom {
-        right: 10px;
-        padding: 8px;
-        font-size: 18px;
-    }
-
-    .scroll-to-top {
-        bottom: 70px;
-    }
-
-    .scroll-to-bottom {
-        bottom: 10px;
-    }
+/* Стили для всех ссылок */
+a {
+    color: #000; /* Устанавливает черный цвет для всех ссылок */
+    text-decoration: none; /* Убирает подчеркивание у всех ссылок */
 }
